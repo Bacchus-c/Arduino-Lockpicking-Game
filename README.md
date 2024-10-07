@@ -9,7 +9,7 @@
 
 ## Description
 
-A simple lockpicking game developed for Arduino, inspired by lockpicking minigames in games like Skyrim or Oblivion, in which the player must rely on visual and auditory feedback to position the cursor correctly to pick a lock.
+A simple lock picking game developed for Arduino, inspired by lockpicking minigames in games like Skyrim or Oblivion, in which the player must rely on visual and auditory feedback to position the cursor correctly to pick a lock.
 
 ### Gameplay
 When initialized the game generates a random target position on a 2 dimensional lock. The player, using the joystick to control their pointer's position, must rely on a mixture of visual and auditory feedback to try and locate the randomly generated target. Once they think they have found the target, they can hit the button to attempt to pick the lock, if they are close enough to the target they will pass and keep all their picks, and a new target will be generated. IF they are not close enough then they will break one of their picks and the target will remain. If the player successfully picks three locks, they will win and be shown the amount of time it took them to complete the game in seconds, if however they break all 3 picks then they will lose the game. In either case the game will reset after 10 seconds.
@@ -25,7 +25,7 @@ The game provides both visual and auditory feedback elements, Visually the playe
 - **Joystick Module**
 - **Push Button**
 - **Buzzer**
-- **10k ohms Resistor**
+- **10kΩ Resistor**
 - **Power Source for Arduino**
 
 ### Connections
@@ -56,7 +56,7 @@ The game provides both visual and auditory feedback elements, Visually the playe
 
 ## Software Architecture
 
-The software is structured around a main loop that runs continously, and calls various functions to determine things about the game state and the players actions.
+The software is structured around a main loop that runs continuously, and calls various functions to determine things about the game state and the player's actions. The software also relies on the library `U8g2lib.h` for graphics, and communication with the OLED screen 
 
 ### Main Loop
 
@@ -67,18 +67,19 @@ The `loop()` function continuously runs the game logic. It monitors the player's
 - `checkDistance()` Compares the players pointer position to the target position
 - `buttonPress()` Checks if the button was pressed, and if so determines whether to generate a new target or subtract the number of available lockpicks.
 - `checkGameState()` Checks if a win condition has been reached, and if so displays the time taken to beat the game before resetting
-- `displayGameOver()` If all picks are borken, clears screen, displays Game Over abefore resetting
-- `allPicksBroken()` Returns a bool based on whetehr there are picks left to play with or not
+- `displayGameOver()` If all picks are broken, clears screen, displays Game Over before resetting
+- `allPicksBroken()` Returns a bool based on whether there are picks left to play with or not
 - `displayPicks()` Draws as many picks as are available
 
 
 ## Installation
 
-After completing the hardware setup, download `LockGame.ino` from the Github Repo. Then open the file in the Arduino IDE, connect your arduino via USB, and upload the file. After this you should be ready to play. Simply power on the device and it will begin.
+After completing the hardware setup, download [LockGame.ino](/assets/LockGame.ino) from the assets section. Then open the file in the Arduino IDE, connect your arduino via USB, and upload the file. After this you should be ready to play. Simply power on the device and it will begin.
 
 ## Future Improvements
 - **UI/UX improvements**: Something like the main menu or controls for choosing when to begin the game, if you'd like to play again etc.
 - **Highscores**: Stored highscores to encourage speedy play 
 - **Scaling Difficulty**: Each successive attempt could ramp up the difficulty, either requiring more precision or reducing the number of available picks.
+
 
 
