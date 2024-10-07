@@ -21,6 +21,7 @@ A simple lockpicking game developed for Arduino, inspired by lockpicking minigam
 - **Buzzer**
 
 ### Connections
+![Hardware Setup Diagram](assets/LockPickGame Hardware Setup.svg)
 
 ## Software Architecture
 
