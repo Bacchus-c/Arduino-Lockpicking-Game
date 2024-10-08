@@ -74,7 +74,7 @@ The `loop()` function continuously runs the game logic. It monitors the player's
 
 ## Installation
 
-After completing the hardware setup, download [LockGame.ino](/assets/LockGame.ino) from the assets section. Then open the file in the Arduino IDE, connect your arduino via USB, and upload the file. After this you should be ready to play. Simply power on the device and it will begin.
+After completing the hardware setup, download [LockGame.ino](/code/LockGame.ino) from the assets section. Then open the file in the Arduino IDE, connect your arduino via USB, and upload the file. After this you should be ready to play. Simply power on the device and it will begin.
 
 ## Future Improvements
 - **UI/UX improvements**: Something like the main menu or controls for choosing when to begin the game, if you'd like to play again etc.
